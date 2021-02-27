@@ -10,8 +10,8 @@
     "author": "mu92 musmannadeem92@gmail.com",
     "license": "ISC",
     "dependencies": {
-        "cheerio": "latest",
-        "express": "latest",
-        "request": "latest"
+        "cheerio": "^1.0.0-rc.5",
+        "express": "^4.17.1",
+        "request": "^2.88.2"
     }
 }
