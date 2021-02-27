@@ -28,12 +28,7 @@ app.get('/preview-link', (req, res) => {
                 if (!error) {
                     var $ = cheerio.load(body)
 
-                    var header = $('header').html();
                     returnRes.title = $('title').text();
-                    var content = $('body').text();
-                    // var freeArticles = $('.central-featured-lang.lang1 a small').text()
-                    
-                    // returnRes.keywords = $('meta[name="keywords"]').attr('content') || '';
                     let og_title = $('meta[property="og:title"]').attr('content');
                     if( og_title ) {
                         returnRes.title = og_title
@@ -45,7 +40,7 @@ app.get('/preview-link', (req, res) => {
                     if (og_description) {
                         returnRes.description = og_description
                     }
-                    let og_url = $('meta[property="og:url"]').attr('content');
+                    
                     //managing images
                     let og_image = $('meta[property="og:image"]').attr('content');
                     if (og_image) {
