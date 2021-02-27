@@ -7,16 +7,9 @@ module.exports = {
     canonicalPage(url) {
         canonical = "";
 
-        if (url.indexOf('http://') != -1) {
-            url = url.replace('http://', '');
-            url = url.replace('HTTP://', '');
-        }
-
-        if (url.indexOf('https://') != -1) {
-            url = url.replace('https://', '');
-            url = url.replace('HTTPS://', '');
-        }
-
+        //  Remove http(s)://
+        url = url.replace(/(^\w+:|^)\/\//, '');
+        
         for (i = 0; i < url.length; i++) {
             if (url[i] != "/")
                 canonical += url[i];

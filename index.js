@@ -9,7 +9,6 @@ const app = express();
 app.get('/preview-link', (req, res) => {
 
     let url = req.query.url ? req.query.url : '';
-    let match = Regex.URL_REGEX.exec(url);
 
     if (Regex.URL_REGEX.test(url)) {
         let returnRes = {
